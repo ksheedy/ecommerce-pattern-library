@@ -1,8 +1,7 @@
 :root {
   --color-primary: #1590a9;
   --color-primary-light: #cddedf;
-  --color-neutral-grey:#f8f9f9;
-
+  --color-neutral-grey: #f8f9f9;
   --font-primary: "Nunito", sans-serif;
   --font-secondary: "Fredoka One", cursive;
 }
