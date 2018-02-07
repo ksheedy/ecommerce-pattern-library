@@ -1,6 +1,7 @@
 :root {
   --color-primary: #1590a9;
   --color-primary-light: #cddedf;
+  --color-primary-dark: #106172;
   --color-neutral-grey: #f8f9f9;
   --font-primary: "Nunito", sans-serif;
   --font-secondary: "Fredoka One", cursive;
@@ -8,4 +9,37 @@
 
 html {
   font-family: var(--font-primary);
+}
+
+h1 {
+  font-family: var(--font-secondary);
+}
+
+h2 {
+  font-family: var(--font-secondary);
+}
+
+h3 {
+  font-family: var(--font-secondary);
+}
+
+h4 {
+  font-family: var(--font-primary);
+  font-weight: bold;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+cite {
+  color: var(--color-primary);
+}
+
+mark {
+  background-color: var(--color-primary-light);
 }
