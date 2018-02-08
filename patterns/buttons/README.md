@@ -1,4 +1,5 @@
 ---
+name: buttons
 buttons:
   standard: |
     The standard button is the main button used throughout the website. It uses the primary colour of the website and the hover uses primary-dark to create contrast.
