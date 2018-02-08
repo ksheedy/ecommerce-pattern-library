@@ -1,15 +1,12 @@
 ---
 name: "Polar Skates"
 fontURL: "https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:400,700"
-font:
+fonts:
   primary: |
     The primary typeface represents a fun and easy to read font in order to reflect the relaxed and fun-loving nature of our business.
-
     Use the primary typeface for body copy, product name on product list page, and the contact and navigation in the footer.
-
   secondary: |
     The secondary typeface is a bold and fun font that mirrors the rounded edges of the primary typeface.
-
     Use the secondary typeface for headings, text in the banner and call to action, and buttons.
 colors:
   primary: |
