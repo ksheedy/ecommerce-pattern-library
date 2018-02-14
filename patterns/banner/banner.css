@@ -1,0 +1,9 @@
+.banner {
+  background: url("../../images/home-banner.jpg") center top / cover no-repeat;
+  height: 100vh;
+  border-bottom: solid 3px var(--color-primary);
+}
+
+.sign-up-banner {
+  background-color: var(--color-neutral-grey);
+}
