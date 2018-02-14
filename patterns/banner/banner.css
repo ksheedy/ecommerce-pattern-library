@@ -7,3 +7,8 @@
 .sign-up-banner {
   background-color: var(--color-neutral-grey);
 }
+
+input {
+  border-color: none;
+  height: 53px;
+}
