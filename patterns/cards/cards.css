@@ -1,29 +1,31 @@
-.icon-card {
+.category-icon-card {
   background-color: var(--color-neutral-grey);
   color: #000;
   font-family: var(--font-secondary);
 }
 
-a:hover {
+category-icon-card:hover {
   color: var(--color-primary);
 }
 
-.icon-icon {
+category-icon-card:hover .icon-icon {
+  color: var(--color-primary);
+}
+
+.category-image-card {
+  background-color: var(--color-neutral-grey);
+  color: #000;
+  font-family: var(--font-secondary);
+}
+
+category-image-card:hover {
+  color: var(--color-primary);
+}
+
+.product-list-card h4, .product-list-card p {
   color: #000;
 }
 
-a .icon-icon:hover {
-  color: var(--color-primary);
-}
-
-span:hover {
-  color: var(--color-primary);
-}
-
-.product-list-card h4, p {
-  color: #000;
-}
-
-.product-list-card h4:hover, p:hover {
+.product-list-card:hover h4, .product-list-card:hover p {
   color: var(--color-primary);
 }
