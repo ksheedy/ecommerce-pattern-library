@@ -4,11 +4,11 @@
   font-family: var(--font-secondary);
 }
 
-category-icon-card:hover {
+.category-icon-card:hover {
   color: var(--color-primary);
 }
 
-category-icon-card:hover .icon-icon {
+.category-icon-card:hover .icon-icon {
   color: var(--color-primary);
 }
 
@@ -18,7 +18,7 @@ category-icon-card:hover .icon-icon {
   font-family: var(--font-secondary);
 }
 
-category-image-card:hover {
+.category-image-card:hover {
   color: var(--color-primary);
 }
 
