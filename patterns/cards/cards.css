@@ -1,0 +1,29 @@
+.icon-card {
+  background-color: var(--color-neutral-grey);
+  color: #000;
+  font-family: var(--font-secondary);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+.icon-icon {
+  color: #000;
+}
+
+a .icon-icon:hover {
+  color: var(--color-primary);
+}
+
+span:hover {
+  color: var(--color-primary);
+}
+
+.product-list-card h4, p {
+  color: #000;
+}
+
+.product-list-card h4:hover, p:hover {
+  color: var(--color-primary);
+}
