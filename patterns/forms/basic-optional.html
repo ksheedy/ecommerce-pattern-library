@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Basic Optional</title>
+  <meta name="handheldfriendly" content="true">
+  <meta name="mobileoptimized" content="240">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="../../common/modules.css" rel="stylesheet">
+  <link href="../../common/grid.css" rel="stylesheet">
+  <link href="../../common/type.css" rel="stylesheet">
+  <link href="../../common/theme.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:400,700" rel="stylesheet">
+  <link href="forms.css" rel="stylesheet">
+</head>
+<body>
+  <form class="max-length island" action="#" method="post" novalidate>
+    <div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
+      <h4 class="push-0">
+        <i class="icon i-32"><svg><use xlink:href="../../images/icons.svg#nav-close" /></svg></i>
+        <span class="milli icon-label">There are items that require your attention</span>
+      </h4>
+    </div>
+
+    <div class="basic-input push-1-2">
+      <label for="basic">Basic Input</label>
+      <input class="basic-input-field" id="basic" required aria-describedby="name-error">
+      <p class="error-message milli island-1-4 push-0" id="name-error">
+        <i class="icon i-16"><svg><use xlink:href="../../images/icons.svg#nav-close" /></svg></i>
+        <span class="icon-label">Please provide a name</span>
+      </p>
+    </div>
+  </form>
+  <script src="https://thomasjbradley.github.io/form-validation-helper/index.js"></script>
+
+</body>
+</html>
