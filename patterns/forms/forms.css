@@ -1,9 +1,5 @@
-.basic-input {
-
-}
-
 .basic-input-field {
-  border: solid 3px var(--color-primary);
+  border: 3px solid var(--color-primary);
   border-radius: 6px;
 }
 

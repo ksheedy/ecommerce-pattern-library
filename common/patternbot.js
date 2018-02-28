@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1519840356707
+ * @version 1519852841919
  */
-const patternManifest_1519840356707 = {
+const patternManifest_1519852841918 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -722,19 +722,19 @@ const patternManifest_1519840356707 = {
           "name": "check-boxes",
           "namePretty": "Check boxes",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/check-boxes.html",
-          "localPath": "patterns/forms/check-boxes.html"
+          "localPath": "patterns/forms/check-boxes.html",
+          "readme": {
+            "width": 300
+          }
         },
         {
           "name": "drop-down",
           "namePretty": "Drop down",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/drop-down.html",
-          "localPath": "patterns/forms/drop-down.html"
-        },
-        {
-          "name": "quantity-picker",
-          "namePretty": "Quantity picker",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/quantity-picker.html",
-          "localPath": "patterns/forms/quantity-picker.html"
+          "localPath": "patterns/forms/drop-down.html",
+          "readme": {
+            "width": 300
+          }
         }
       ],
       "md": [
@@ -775,5 +775,5 @@ const patternManifest_1519840356707 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519840356707);
+patternBotIncludes(patternManifest_1519852841918);
 }());

@@ -1240,13 +1240,12 @@
             <li><a href="#forms--basic">Basic</a></li>
             <li><a href="#forms--check-boxes">Check boxes</a></li>
             <li><a href="#forms--drop-down">Drop down</a></li>
-            <li><a href="#forms--quantity-picker">Quantity picker</a></li>
         </ol>
       </nav>
   </div>
 
       <div class="pattern-desc milli island" >
-        <div class="max-length"><p>Description</p>
+        <div class="max-length"><p>The basic optional input box is to be used for optional form text fields.</p>
 </div>
       </div>
 
@@ -1280,7 +1279,7 @@
             </ul>
         </div>
           <div class="pattern-desc milli island" style="">
-            <div class="max-length"><p>Description</p>
+            <div class="max-length"><p>The basic optional input box is to be used for optional form text fields.</p>
 </div>
           </div>
 
@@ -1312,20 +1311,10 @@
                 </i>
               </button>
               <code><pre id="forms-basic-optional-code-sample-copy-chunk">&lt;form class="max-length island" action="#" method="post" novalidate=""&gt;
-  &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
-    &lt;h4 class="push-0">
-        &lt;i class="icon i-32">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-close"/>&lt;/svg>&lt;/i>
-        &lt;span class="milli icon-label">There are items that require your attention&lt;/span>
-      &lt;/h4>
-  &lt;/div>
 
   &lt;div class="basic-input push-1-2">
-    &lt;label for="basic">Basic Input&lt;/label>
-    &lt;input class="basic-input-field" id="basic" required aria-describedby="name-error">
-    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
-      &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-close"/>&lt;/svg>&lt;/i>
-      &lt;span class="icon-label">Please provide a name&lt;/span>
-    &lt;/p>
+    &lt;label for="basic">Basic Input Optional&lt;/label>
+    &lt;input class="basic-input-field" id="basic">
   &lt;/div>
 &lt;/form>
 </pre></code>
@@ -1361,7 +1350,7 @@
             </ul>
         </div>
           <div class="pattern-desc milli island" style="">
-            <div class="max-length"><p>Description</p>
+            <div class="max-length"><p>The basic placeholder input box is to be used for required form text fields that use placeholder text, for example email addresses and URLs.</p>
 </div>
           </div>
 
@@ -1442,7 +1431,7 @@
             </ul>
         </div>
           <div class="pattern-desc milli island" style="">
-            <div class="max-length"><p>Description</p>
+            <div class="max-length"><p>The basic input box is to be used for most required form text fields.</p>
 </div>
           </div>
 
@@ -1522,10 +1511,14 @@
                 </li>
             </ul>
         </div>
+          <div class="pattern-desc milli island" style="">
+            <div class="max-length"><p>Check boxes are to be used when a user needs to select from multiple items out a few possibilities.</p>
+</div>
+          </div>
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:300px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/check-boxes.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
@@ -1550,7 +1543,15 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-check-boxes-code-sample-copy-chunk">
+              <code><pre id="forms-check-boxes-code-sample-copy-chunk">&lt;div class="push pad-t"&gt;
+  &lt;input class="basic-input-field" type="checkbox" id="checkbox">
+  &lt;label for="checkbox">Checkbox&lt;/label>
+&lt;/div>
+
+&lt;div class="push">
+  &lt;input class="basic-input-field" type="checkbox" id="checkbox" checked>
+  &lt;label for="checkbox">Checkbox&lt;/label>
+&lt;/div>
 </pre></code>
             </div>
           </div>
@@ -1583,10 +1584,14 @@
                 </li>
             </ul>
         </div>
+          <div class="pattern-desc milli island" style="">
+            <div class="max-length"><p>The basic drop-down input box is to be used for drop down options in your form.</p>
+</div>
+          </div>
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:300px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/drop-down.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
@@ -1620,75 +1625,15 @@
   &lt;/div>
 
   &lt;div class="basic-input push-1-2">
-    &lt;label for="basic">Basic Input&lt;/label>
-    &lt;input class="basic-input-field" id="basic" required aria-describedby="name-error">
-    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
-      &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-close"/>&lt;/svg>&lt;/i>
-      &lt;span class="icon-label">Please provide a name&lt;/span>
-    &lt;/p>
+    &lt;label for="basic">Basic Select Boxes&lt;/label>
+    &lt;select class="basic-input-field" id="basic">
+      &lt;option>Option 1&lt;/option>
+      &lt;option>Option 2&lt;/option>
+      &lt;option>Option 3&lt;/option>
+      &lt;option>Option 4&lt;/option>
+    &lt;/select>
   &lt;/div>
 &lt;/form>
-</pre></code>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="pattern-details " id="forms--quantity-picker" style="">
-        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
-          <h3 class="pattern-name tera push-1-8">Quantity picker</h3>
-            <ul class="list-group-inline gutter absolute pin-cr">
-                <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-quantity-picker-code-sample">
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-code"></use></svg>
-                    </i>
-                  </button>
-                </li>
-                <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/quantity-picker" hidden>
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-copy"></use></svg>
-                    </i>
-                  </button>
-                </li>
-                <li>
-                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/quantity-picker.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-pop-out"></use></svg>
-                    </i>
-                  </a>
-                </li>
-            </ul>
-        </div>
-
-      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
-        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
-            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/forms/quantity-picker.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
-              <div class="resizeable-pattern-length">
-                <div class="resize-handle resize-handle-left" style="">
-                  <i class="icon i-18">
-                    <svg><use xlink:href="#icon-resize-handle" /></svg>
-                  </i>
-                </div>
-                <div class="resize-handle resize-handle-right" style="">
-                  <i class="icon i-18">
-                    <svg><use xlink:href="#icon-resize-handle" /></svg>
-                  </i>
-                </div>
-              </div>
-          </div>
-        </div>
-
-          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-quantity-picker-code-sample" tabindex="-1">
-            <div class="pattern-code relative milli island-1-2" style="">
-              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-quantity-picker-code-sample-copy-chunk" hidden>
-                <i class="icon i-18">
-                  <svg><use xlink:href="#icon-copy"></use></svg>
-                </i>
-              </button>
-              <code><pre id="forms-quantity-picker-code-sample-copy-chunk">
 </pre></code>
             </div>
           </div>
