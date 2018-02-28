@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1519839112354
+ * @version 1519840356707
  */
-const patternManifest_1519839112354 = {
+const patternManifest_1519840356707 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -695,19 +695,28 @@ const patternManifest_1519839112354 = {
           "name": "basic-optional",
           "namePretty": "Basic optional",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic-optional.html",
-          "localPath": "patterns/forms/basic-optional.html"
+          "localPath": "patterns/forms/basic-optional.html",
+          "readme": {
+            "width": 300
+          }
         },
         {
           "name": "basic-placeholder",
           "namePretty": "Basic placeholder",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic-placeholder.html",
-          "localPath": "patterns/forms/basic-placeholder.html"
+          "localPath": "patterns/forms/basic-placeholder.html",
+          "readme": {
+            "width": 300
+          }
         },
         {
           "name": "basic",
           "namePretty": "Basic",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic.html",
-          "localPath": "patterns/forms/basic.html"
+          "localPath": "patterns/forms/basic.html",
+          "readme": {
+            "width": 300
+          }
         },
         {
           "name": "check-boxes",
@@ -728,7 +737,14 @@ const patternManifest_1519839112354 = {
           "localPath": "patterns/forms/quantity-picker.html"
         }
       ],
-      "md": [],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/README.md",
+          "localPath": "patterns/forms/README.md"
+        }
+      ],
       "css": [
         {
           "name": "forms",
@@ -759,5 +775,5 @@ const patternManifest_1519839112354 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519839112354);
+patternBotIncludes(patternManifest_1519840356707);
 }());
