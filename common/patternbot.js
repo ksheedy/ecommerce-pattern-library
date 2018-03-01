@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1519913802056
+ * @version 1519916865499
  */
-const patternManifest_1519913802055 = {
+const patternManifest_1519916865499 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -523,17 +523,17 @@ const patternManifest_1519913802055 = {
     },
     "icons": [
       "arrow-down",
-      "arrow-left",
       "arrow-right",
+      "arrow-left",
       "cart",
       "helmet",
-      "nav-hambuger",
       "nav-close",
+      "nav-hambuger",
       "skate",
       "skatetool",
       "socialmedia-facebook",
-      "socialmedia-twitter",
       "socialmedia-instagram",
+      "socialmedia-twitter",
       "wheel"
     ],
     "interfaceColours": {
@@ -764,7 +764,10 @@ const patternManifest_1519913802055 = {
           "name": "nav-checkout-small",
           "namePretty": "Nav checkout small",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/nav-checkout-small.html",
-          "localPath": "patterns/navigation/nav-checkout-small.html"
+          "localPath": "patterns/navigation/nav-checkout-small.html",
+          "readme": {
+            "width": 320
+          }
         },
         {
           "name": "nav-checkout",
@@ -812,5 +815,5 @@ const patternManifest_1519913802055 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519913802055);
+patternBotIncludes(patternManifest_1519916865499);
 }());
