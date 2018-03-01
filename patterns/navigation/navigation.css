@@ -1,0 +1,13 @@
+.nav-checkout {
+  color: var(--color-primary-light);
+  font-family: var(--font-secondary);
+}
+
+.current {
+  color: var(--color-primary);
+  background-color: var(--color-neutral-grey);
+}
+
+.nav-list {
+  padding-left: 0;
+}
