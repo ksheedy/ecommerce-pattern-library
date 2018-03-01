@@ -3,6 +3,10 @@
   border-radius: 6px;
 }
 
+[type="checkbox"] + label::before {
+  border: 3px solid var(--color-primary);
+  border-radius: 6px;
+}
 .flag-optional {
   color: #999;
 }
