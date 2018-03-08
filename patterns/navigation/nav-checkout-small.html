@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-ca">
 <head>
-  <metlabel charset="utf-8">
+  <meta charset="utf-8">
   <title>Checkout Navigation</title>
   <meta name="handheldfriendly" content="true">
   <meta name="mobileoptimized" content="240">
@@ -15,43 +15,44 @@
 </head>
 <body>
   <nav>
-    <ul class="nav-list push-0 list-group">
-      <li class="">
-        <input class="form-card-input" type="radio" name="nav-tab" id="customer-info" checked>
-        <div class="form-card-wrap island">
+    <input class="form-card-input" type="radio" name="nav-tab" id="customer-info" checked>
+    <input class="form-card-input" type="radio" name="nav-tab" id="shipping-info">
+    <input class="form-card-input" type="radio" name="nav-tab" id="payment-info">
+
+    <ul class="relative nav-list push-0 list-group">
+      <li id="customer-info-wrap" class="">
+        <div  class="form-card-wrap island">
           <label class="nav-checkout link-box" for="customer-info">Customer Info
             <i class="icon i-16 push-1-4 inline-block">
               <svg><use xlink:href="../../images/icons.svg#arrow-down"/></svg>
             </i>
           </label>
           <div class="form-card">
-            <h1>Checkout</h1>
+            <h1>Customer</h1>
           </div>
         </div>
       </li>
-      <li class="">
-        <input class="form-card-input" type="radio" name="nav-tab" id="shipping-info">
-        <div class="form-card-wrap island">
+      <li id="shipping-info-wrap" class="">
+        <div  class="form-card-wrap island">
           <label class="nav-checkout link-box" for="shipping-info">Shipping Info
             <i class="icon i-16 push-1-4 inline-block">
               <svg><use xlink:href="../../images/icons.svg#arrow-down"/></svg>
             </i>
           </label>
           <div class="form-card">
-            <h1>Checkout</h1>
+            <h1>Shipping</h1>
           </div>
         </div>
       </li>
-      <li class="">
-        <input class="form-card-input" type="radio" name="nav-tab" id="payment-info">
-        <div class="form-card-wrap island">
+      <li id="payment-info-wrap" class="">
+        <div  class="form-card-wrap island">
           <label class="nav-checkout link-box" for="payment-info">Payment Info
             <i class="icon i-16 push-1-4 inline-block">
               <svg><use xlink:href="../../images/icons.svg#arrow-down"/></svg>
             </i>
           </label>
           <div class="form-card">
-            <h1>Checkout</h1>
+            <h1>Payment</h1>
           </div>
         </div>
       </li>

@@ -1012,6 +1012,13 @@
               <code><pre id="buttons-buttons-code-sample-copy-chunk">&lt;a class="btn" href="#"&gt;Standard button&lt;/a>
 &lt;a class="btn btn-light" href="#">Light button&lt;/a>
 &lt;a class="btn btn-square" href="#">Square button&lt;/a>
+&lt;a class="btn btn-icon" href="#">
+    &lt;i class="icon i-64 push-1-4 inline-block logo inline-block">
+      &lt;svg>&lt;use xlink:href="../../images/icons.svg#cart"/>&lt;/svg>
+    &lt;/i>
+    Icon button
+  &lt;/a>
+&lt;a class="btn btn-icon-text" href="#">Icon Text button&lt;/a>
 </pre></code>
             </div>
           </div>
@@ -1801,7 +1808,28 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="header-header-code-sample-copy-chunk">
+              <code><pre id="header-header-code-sample-copy-chunk">&lt;header id=""&gt;
+  &lt;div class="top-bar">
+    &lt;div class="text-center">
+      &lt;i class="icon i-64 push-1-4 inline-block logo inline-block">
+          &lt;svg>&lt;use xlink:href="../../images/icons.svg#skate"/>&lt;/svg>
+        &lt;/i>
+      &lt;h1 class="inline-block push-0 valign-middle">Polar Skates&lt;/h1>
+    &lt;/div>
+    &lt;nav>
+      &lt;ul class="list-group push-0">
+        &lt;li>&lt;a href="#">Skates&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Protection&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Tools &amp; Parts&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Apparel&lt;/a>&lt;/li>
+        &lt;li>&lt;a class="2" href="#">About Us&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/nav>
+  &lt;/div>
+  &lt;div class="shipping-bar text-center">
+    &lt;p class="pad-t-1-2 pad-b-1-2">$10 flat rate shipping across Canada&lt;/p>
+  &lt;/div>
+&lt;/header>
 </pre></code>
             </div>
           </div>
@@ -1888,9 +1916,12 @@
                 </i>
               </button>
               <code><pre id="navigation-nav-checkout-small-code-sample-copy-chunk">&lt;nav&gt;
-  &lt;ul class="nav-list push-0 list-group">
-    &lt;li>
-      &lt;input class="form-card-input" type="radio" name="nav-tab" id="customer-info" checked>
+  &lt;input class="form-card-input" type="radio" name="nav-tab" id="customer-info" checked>
+  &lt;input class="form-card-input" type="radio" name="nav-tab" id="shipping-info">
+  &lt;input class="form-card-input" type="radio" name="nav-tab" id="payment-info">
+
+  &lt;ul class="relative nav-list push-0 list-group">
+    &lt;li id="customer-info-wrap">
       &lt;div class="form-card-wrap island">
         &lt;label class="nav-checkout link-box" for="customer-info">Customer Info
           &lt;i class="icon i-16 push-1-4 inline-block">
@@ -1898,12 +1929,11 @@
             &lt;/i>
         &lt;/label>
         &lt;div class="form-card">
-          &lt;h1>Checkout&lt;/h1>
+          &lt;h1>Customer&lt;/h1>
         &lt;/div>
       &lt;/div>
     &lt;/li>
-    &lt;li>
-      &lt;input class="form-card-input" type="radio" name="nav-tab" id="shipping-info">
+    &lt;li id="shipping-info-wrap">
       &lt;div class="form-card-wrap island">
         &lt;label class="nav-checkout link-box" for="shipping-info">Shipping Info
           &lt;i class="icon i-16 push-1-4 inline-block">
@@ -1911,12 +1941,11 @@
             &lt;/i>
         &lt;/label>
         &lt;div class="form-card">
-          &lt;h1>Checkout&lt;/h1>
+          &lt;h1>Shipping&lt;/h1>
         &lt;/div>
       &lt;/div>
     &lt;/li>
-    &lt;li>
-      &lt;input class="form-card-input" type="radio" name="nav-tab" id="payment-info">
+    &lt;li id="payment-info-wrap">
       &lt;div class="form-card-wrap island">
         &lt;label class="nav-checkout link-box" for="payment-info">Payment Info
           &lt;i class="icon i-16 push-1-4 inline-block">
@@ -1924,7 +1953,7 @@
             &lt;/i>
         &lt;/label>
         &lt;div class="form-card">
-          &lt;h1>Checkout&lt;/h1>
+          &lt;h1>Payment&lt;/h1>
         &lt;/div>
       &lt;/div>
     &lt;/li>

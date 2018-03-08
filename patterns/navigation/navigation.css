@@ -7,16 +7,69 @@
   display: none;
 }
 
-.form-card-input:checked ~  .form-card-wrap,
-.form-card-input:checked ~  .form-card-wrap label {
+#customer-info:checked ~  .nav-list #customer-info-wrap,
+#customer-info:checked ~  .nav-list #customer-info-wrap label,
+#shipping-info:checked ~  .nav-list #shipping-info-wrap,
+#shipping-info:checked ~  .nav-list #shipping-info-wrap label,
+#payment-info:checked ~  .nav-list #payment-info-wrap,
+#payment-info:checked ~  .nav-list #payment-info-wrap label
+ {
   color: var(--color-primary);
   background-color: var(--color-neutral-grey);
 }
 
-.form-card-input:checked ~ .form-card-wrap .form-card {
+#customer-info:checked ~ .nav-list #customer-info-wrap .form-card,
+#shipping-info:checked ~ .nav-list #shipping-info-wrap .form-card,
+#payment-info:checked ~ .nav-list #payment-info-wrap .form-card
+ {
   display: block;
 }
 
 .nav-list {
   padding-left: 0;
+  position: relative;
+}
+
+@media only screen and (min-width: 38em) {
+
+  .nav-list {
+
+  }
+
+  .nav-list li {
+    padding-top: 4em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2em;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .nav-list label {
+    width: 33.3333%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+  }
+
+  .nav-list li:nth-child(2) label {
+    left: 33.3333%;
+  }
+
+  .nav-list li:nth-child(3) label {
+    left: 66.6666%;
+  }
+
+  #customer-info:checked ~ .nav-list #customer-info-wrap,
+  #shipping-info:checked ~ .nav-list #shipping-info-wrap,
+  #payment-info:checked ~ .nav-list #payment-info-wrap
+   {
+    position: static;
+    height: auto;
+  }
+
+
 }
