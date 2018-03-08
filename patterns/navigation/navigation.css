@@ -3,9 +3,18 @@
   font-family: var(--font-secondary);
 }
 
-.current {
+.form-card {
+  display: none;
+}
+
+.form-card-input:checked ~  .form-card-wrap,
+.form-card-input:checked ~  .form-card-wrap label {
   color: var(--color-primary);
   background-color: var(--color-neutral-grey);
+}
+
+.form-card-input:checked ~ .form-card-wrap .form-card {
+  display: block;
 }
 
 .nav-list {
