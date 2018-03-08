@@ -41,3 +41,13 @@
 
   color: #fff;
 }
+
+.btn-icon {
+  background-color: transparent;
+  border: transparent;
+}
+
+.btn-icon:hover {
+  background-color: var(--color-primary);
+  border: var(--color-primary);
+}
