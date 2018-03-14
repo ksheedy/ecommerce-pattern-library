@@ -1813,39 +1813,39 @@
                 </i>
               </button>
               <code><pre id="header-header-code-sample-copy-chunk">&lt;header id=""&gt;
-  &lt;div class="top-bar">
-    &lt;div class="text-center">
-      &lt;i class="icon i-48 push-1-4 inline-block logo inline-block">
+  &lt;div class="top-bar island">
+    &lt;div class="left">
+      &lt;i class="logo icon i-48 push-1-4 inline-block logo inline-block">
           &lt;svg>&lt;use xlink:href="../../images/icons.svg#skate"/>&lt;/svg>
         &lt;/i>
       &lt;h1 class="inline-block push-0 valign-middle tera">Polar Skates&lt;/h1>
-      &lt;a class="btn btn-icon valign-middle" href="#">
-          &lt;i class="icon i-20 inline-block">
-            &lt;svg>&lt;use xlink:href="../../images/icons.svg#cart"/>&lt;/svg>
-          &lt;/i>
-        &lt;/a>
     &lt;/div>
-    &lt;nav>
-      &lt;ul class="list-group push-0">
-        &lt;li>&lt;a href="#">Skates&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Protection&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Tools &amp; Parts&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Apparel&lt;/a>&lt;/li>
-        &lt;li>&lt;a class="2" href="#">About Us&lt;/a>&lt;/li>
+    &lt;nav class="relative right">
+      &lt;input type="checkbox" class="nav-check" id="nav-check">
+      &lt;label class="nav-label push-2" for="nav-check">
+        &lt;i class="icon i-32 inline-block nav-icon">
+            &lt;svg>&lt;use class="pad-t-1-2 nav-open" xlink:href="../../images/icons.svg#nav-hambuger"/>&lt;/svg>
+          &lt;/i>
+        &lt;i class="icon i-32 inline-block nav-icon">
+            &lt;svg>&lt;use class="nav-close" xlink:href="../../images/icons.svg#nav-close"/>&lt;/svg>
+          &lt;/i>
+      &lt;/label>
+      &lt;ul class="list-group push-0 nav text-center">
+        &lt;li class="island-1-2">&lt;a class="mega island gutter" href="#">Skates&lt;/a>&lt;/li>
+        &lt;li class="island-1-2">&lt;a class="mega island gutter" href="#">Protection&lt;/a>&lt;/li>
+        &lt;li class="island-1-2">&lt;a class="mega island gutter" href="#">Tools &amp; Parts&lt;/a>&lt;/li>
+        &lt;li class="island-1-2">&lt;a class="mega island gutter" href="#">Apparel&lt;/a>&lt;/li>
+        &lt;li class="island-1-2">&lt;a class="mega island gutter" href="#">About Us&lt;/a>&lt;/li>
+        &lt;div class="mega gutter island-1-2">
+          &lt;a class="btn btn-icon-text" href="#">
+              &lt;i class="icon i-20 inline-block">
+                &lt;svg>&lt;use xlink:href="../../images/icons.svg#cart"/>&lt;/svg>
+              &lt;/i>
+              Cart
+            &lt;/a>
+        &lt;/div>
       &lt;/ul>
     &lt;/nav>
-    &lt;div>
-      &lt;a class="btn btn-icon-text" href="#">
-          &lt;i class="icon i-20 inline-block">
-            &lt;svg>&lt;use xlink:href="../../images/icons.svg#cart"/>&lt;/svg>
-          &lt;/i>
-          Cart
-        &lt;/a>
-    &lt;/div>
-  &lt;/div>
-
-  &lt;div class="shipping-bar text-center">
-    &lt;p class="pad-t-1-2 pad-b-1-2">$10 flat rate shipping across Canada&lt;/p>
   &lt;/div>
 &lt;/header>
 </pre></code>
@@ -1856,18 +1856,35 @@
 
 </section>
 
-        <section class="pattern" id="navigation" role="tabpanel" hidden aria-hidden="true" >
-  <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
+        <section class="pattern" id="navigation" role="tabpanel" hidden aria-hidden="true" style="">
+  <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
     <h2 class="pattern-name exa push-1-4" style="color: #1590a9; font-family: &quot;Fredoka One&quot;, cursive;">Navigation</h2>
-      <nav class="pattern-nav">
-        <ol class="list-group-inline push-1-4 pad-b-1-4">
-            <li><a href="#navigation--nav-checkout-small">Nav checkout small</a></li>
-            <li><a href="#navigation--nav-checkout">Nav checkout</a></li>
-        </ol>
-      </nav>
+        <ul class="list-group-inline gutter absolute pin-cr">
+            <li>
+              <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="navigation-nav-checkout-small-code-sample">
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-code"></use></svg>
+                </i>
+              </button>
+            </li>
+            <li>
+              <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="navigation/nav-checkout-small" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+            </li>
+            <li>
+              <a class="center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/navigation/nav-checkout-small.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-pop-out"></use></svg>
+                </i>
+              </a>
+            </li>
+        </ul>
   </div>
 
-      <div class="pattern-desc milli island" >
+      <div class="pattern-desc milli island" style="">
         <div class="max-length"><p>The nav-checkout-small navigation is to be used only on the checkout page of the website on small screen sizes. This navigation separates the different parts of the checkout process for the user.</p>
 </div>
       </div>
@@ -1875,36 +1892,6 @@
   
 
     <div class="pattern-details " id="navigation--nav-checkout-small" style="">
-        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
-          <h3 class="pattern-name tera push-1-8">Nav checkout small</h3>
-            <ul class="list-group-inline gutter absolute pin-cr">
-                <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="navigation-nav-checkout-small-code-sample">
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-code"></use></svg>
-                    </i>
-                  </button>
-                </li>
-                <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="navigation/nav-checkout-small" hidden>
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-copy"></use></svg>
-                    </i>
-                  </button>
-                </li>
-                <li>
-                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/navigation/nav-checkout-small.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-pop-out"></use></svg>
-                    </i>
-                  </a>
-                </li>
-            </ul>
-        </div>
-          <div class="pattern-desc milli island" style="">
-            <div class="max-length"><p>The nav-checkout-small navigation is to be used only on the checkout page of the website on small screen sizes. This navigation separates the different parts of the checkout process for the user.</p>
-</div>
-          </div>
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
@@ -1975,77 +1962,6 @@
         &lt;/div>
       &lt;/div>
     &lt;/li>
-  &lt;/ul>
-&lt;/nav>
-</pre></code>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="pattern-details " id="navigation--nav-checkout" style="">
-        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
-          <h3 class="pattern-name tera push-1-8">Nav checkout</h3>
-            <ul class="list-group-inline gutter absolute pin-cr">
-                <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="navigation-nav-checkout-code-sample">
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-code"></use></svg>
-                    </i>
-                  </button>
-                </li>
-                <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="navigation/nav-checkout" hidden>
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-copy"></use></svg>
-                    </i>
-                  </button>
-                </li>
-                <li>
-                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/navigation/nav-checkout.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
-                    <i class="icon i-18">
-                      <svg><use xlink:href="#icon-pop-out"></use></svg>
-                    </i>
-                  </a>
-                </li>
-            </ul>
-        </div>
-          <div class="pattern-desc milli island" style="">
-            <div class="max-length"><p>The nav-checkout navigation is to be used only on the checkout page of the website on medium, large and x-large screen sizes. This navigation separates the different parts of the checkout process for the user.</p>
-</div>
-          </div>
-
-      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
-        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
-            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/navigation/nav-checkout.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
-              <div class="resizeable-pattern-length">
-                <div class="resize-handle resize-handle-left" style="">
-                  <i class="icon i-18">
-                    <svg><use xlink:href="#icon-resize-handle" /></svg>
-                  </i>
-                </div>
-                <div class="resize-handle resize-handle-right" style="">
-                  <i class="icon i-18">
-                    <svg><use xlink:href="#icon-resize-handle" /></svg>
-                  </i>
-                </div>
-              </div>
-          </div>
-        </div>
-
-          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="navigation-nav-checkout-code-sample" tabindex="-1">
-            <div class="pattern-code relative milli island-1-2" style="">
-              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#navigation-nav-checkout-code-sample-copy-chunk" hidden>
-                <i class="icon i-18">
-                  <svg><use xlink:href="#icon-copy"></use></svg>
-                </i>
-              </button>
-              <code><pre id="navigation-nav-checkout-code-sample-copy-chunk">&lt;nav&gt;
-  &lt;ul class="nav-list push-0 list-group">
-    &lt;li class="ib island current"> &lt;a class="nav-checkout link-box current" href="#">Customer Info&lt;/a>&lt;/li>
-    &lt;li class="ib island"> &lt;a class="nav-checkout link-box" href="#">Shipping Info&lt;/a>&lt;/li>
-    &lt;li class="ib island"> &lt;a class="nav-checkout link-box" href="#">Payment Info&lt;/a>&lt;/li>
   &lt;/ul>
 &lt;/nav>
 </pre></code>

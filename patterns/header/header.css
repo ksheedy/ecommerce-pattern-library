@@ -1,0 +1,119 @@
+.top-bar {
+  background-color: var(--color-neutral-grey);
+  position: relative;
+  height: 6em;
+  border-bottom: 20px solid var(--color-primary);
+}
+
+.shipping-bar {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+a {
+  color: #000;
+}
+
+li {
+  background-color: var(--color-neutral-grey);
+}
+
+li:hover {
+  background-color: var(--color-primary);
+}
+
+a:hover {
+  color: #fff;
+}
+
+
+
+.logo {
+  display: none;
+}
+
+.nav {
+  display: none;
+  background-color: var(--color-neutral-grey);
+}
+
+.nav li a {
+  text-decoration: none;
+}
+
+.nav-check {
+  position: absolute;
+  top: -3em;
+}
+
+.nav-check:checked ~ .nav {
+  display: block;
+}
+
+.nav-check[type="checkbox"] + label::before {
+  content: " ";
+  display: inline-block;
+  height: 1.8em;
+  margin-right: .3em;
+  position: absolute;
+  vertical-align: middle;
+  top: -.1em;
+  left: -10000em;
+  width: 1.8em;
+
+  background-color: #fff;
+  background-size: cover;
+  border: 2px solid #666;
+
+  line-height: inherit;
+}
+
+.nav-label {
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+}
+
+.nav-icon {
+  position: absolute;
+  top: .5em;
+  right: 0;
+}
+
+.nav-close {
+  display: none;
+}
+
+.nav-check:checked ~ .nav-label .nav-open {
+  display: none;
+}
+
+.nav-check:checked ~ .nav-label .nav-close {
+  display: block;
+}
+
+@media only screen and (min-width: 38em) {
+
+  .logo {
+    display: inline-block;
+  }
+
+  .nav-icon {
+    display: none;
+  }
+
+  .nav {
+    display: inline-block;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0;
+  }
+
+}
