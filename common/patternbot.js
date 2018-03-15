@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1521119238156
+ * @version 1521122467538
  */
-const patternManifest_1521119238156 = {
+const patternManifest_1521122467538 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -698,10 +698,20 @@ const patternManifest_1521119238156 = {
           "name": "footer",
           "namePretty": "Footer",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/footer.html",
-          "localPath": "patterns/footer/footer.html"
+          "localPath": "patterns/footer/footer.html",
+          "readme": {
+            "width": 400
+          }
         }
       ],
-      "md": [],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/README.md",
+          "localPath": "patterns/footer/README.md"
+        }
+      ],
       "css": [
         {
           "name": "footer",
@@ -788,16 +798,29 @@ const patternManifest_1521119238156 = {
           "name": "header",
           "namePretty": "Header",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/header.html",
-          "localPath": "patterns/header/header.html"
+          "localPath": "patterns/header/header.html",
+          "readme": {
+            "width": 400
+          }
         },
         {
           "name": "shipping-bar",
           "namePretty": "Shipping bar",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/shipping-bar.html",
-          "localPath": "patterns/header/shipping-bar.html"
+          "localPath": "patterns/header/shipping-bar.html",
+          "readme": {
+            "width": 400
+          }
         }
       ],
-      "md": [],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/README.md",
+          "localPath": "patterns/header/README.md"
+        }
+      ],
       "css": [
         {
           "name": "header",
@@ -860,5 +883,5 @@ const patternManifest_1521119238156 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521119238156);
+patternBotIncludes(patternManifest_1521122467538);
 }());

@@ -1,0 +1,38 @@
+footer {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.icon img,
+.icon svg {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  fill: #fff;
+}
+
+.icon img:hover,
+.icon svg:hover {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  fill: var(--color-primary-dark);
+}
+
+.bottom-nav {
+  color: #fff;
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #fff;
+  color: var(--color-primary);
+}
