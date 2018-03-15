@@ -1,119 +1,84 @@
-.top-bar {
+.masthead {
   background-color: var(--color-neutral-grey);
-  position: relative;
-  height: 6em;
-  border-bottom: 20px solid var(--color-primary);
+  border-bottom: 7px solid var(--color-primary);
 }
 
-.shipping-bar {
-  background-color: var(--color-primary);
-  color: #fff;
+.masthead-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-a {
-  color: #000;
+.heading {
+  white-space: nowrap;
 }
-
-li {
+.nav {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
   background-color: var(--color-neutral-grey);
 }
-
-li:hover {
-  background-color: var(--color-primary);
-}
-
-a:hover {
-  color: #fff;
-}
-
-
 
 .logo {
   display: none;
 }
 
-.nav {
-  display: none;
-  background-color: var(--color-neutral-grey);
-}
-
 .nav li a {
+  color: #000;
   text-decoration: none;
 }
 
-.nav-check {
-  position: absolute;
-  top: -3em;
+.nav li:hover {
+  background-color: var(--color-primary);
 }
 
-.nav-check:checked ~ .nav {
-  display: block;
-}
-
-.nav-check[type="checkbox"] + label::before {
-  content: " ";
-  display: inline-block;
-  height: 1.8em;
-  margin-right: .3em;
-  position: absolute;
-  vertical-align: middle;
-  top: -.1em;
-  left: -10000em;
-  width: 1.8em;
-
-  background-color: #fff;
-  background-size: cover;
-  border: 2px solid #666;
-
-  line-height: inherit;
-}
-
-.nav-label {
-  cursor: pointer;
-  display: inline-block;
-  width: 40px;
-}
-
-.nav-icon {
-  position: absolute;
-  top: .5em;
-  right: 0;
+.nav li a:hover {
+  color: #fff;
 }
 
 .nav-close {
   display: none;
 }
 
-.nav-check:checked ~ .nav-label .nav-open {
+.nav-check:checked ~ .masthead-group .nav-label .nav-open {
   display: none;
 }
 
-.nav-check:checked ~ .nav-label .nav-close {
+.nav-check:checked ~ .masthead-group .nav-label .nav-close {
   display: block;
 }
 
-@media only screen and (min-width: 38em) {
+.nav-check:checked ~ .masthead-group .nav {
+  display: block;
+}
+
+.shipping-bar {
+  background-color: var(--color-primary);
+  color: #fff;
+ }
+
+@media only screen and (min-width: 60em) {
 
   .logo {
     display: inline-block;
   }
 
-  .nav-icon {
+  .nav {
+    display: block;
+    position: static;
+    flex-grow: 1;
+  }
+
+  .nav li {
+    display: inline-block;
+  }
+
+  .nav li a {
+    padding: 0;
+  }
+
+  .nav-label {
     display: none;
   }
-
-  .nav {
-    display: inline-block;
-  }
-
-  li {
-    display: inline-block;
-    padding: 0;
-  }
-
-  a {
-    display: inline-block;
-    padding: 0;
-  }
-
 }
