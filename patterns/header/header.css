@@ -24,16 +24,35 @@
   display: none;
 }
 
+.icon img,
+.icon svg {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  fill: #000;
+  stroke: #000
+}
+
+.icon img:hover,
+.icon svg:hover {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+}
+
 .nav li a {
   color: #000;
   text-decoration: none;
 }
 
-.nav li:hover {
+.nav li:hover, .nav li a:hover {
   background-color: var(--color-primary);
-}
-
-.nav li a:hover {
   color: #fff;
 }
 
