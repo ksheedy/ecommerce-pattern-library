@@ -1,0 +1,11 @@
+.checkout-border-top {
+  border-bottom: 3px solid var(--color-primary)
+}
+
+td, th {
+    border-bottom: none;
+  }
+
+.checkout-border-bottom {
+    border-top: 3px solid var(--color-primary)
+  }

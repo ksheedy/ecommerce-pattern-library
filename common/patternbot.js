@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1521659665644
+ * @version 1521661549515
  */
-const patternManifest_1521659665644 = {
+const patternManifest_1521661549515 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -938,9 +938,25 @@ const patternManifest_1521659665644 = {
       "name": "table",
       "namePretty": "Table",
       "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table",
-      "html": [],
+      "html": [
+        {
+          "name": "checkout-table",
+          "namePretty": "Checkout table",
+          "filename": "checkout-table",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table/checkout-table.html",
+          "localPath": "patterns/table/checkout-table.html"
+        }
+      ],
       "md": [],
-      "css": []
+      "css": [
+        {
+          "name": "table",
+          "namePretty": "Table",
+          "filename": "table",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table/table.css",
+          "localPath": "patterns/table/table.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -963,5 +979,5 @@ const patternManifest_1521659665644 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521659665644);
+patternBotIncludes(patternManifest_1521661549515);
 }());
