@@ -101,7 +101,6 @@ const patternBotIncludes = function (manifest) {
     for (i = 0; i < t; i++) {
       if (rootMatcher.test(allScripts[i].src)) {
         return allScripts[i].src.split(rootMatcher)[0];
-        break;
       }
     }
   };
@@ -143,7 +142,7 @@ const patternBotIncludes = function (manifest) {
     let patternInfoJson;
     const data = patternElem.innerText.trim();
 
-    if (!data) return {}
+    if (!data) return {};
 
     try {
       patternInfoJson = JSON.parse(data);
@@ -172,9 +171,50 @@ const patternBotIncludes = function (manifest) {
     };
   };
 
+  const correctHrefPaths = function (html) {
+    const hrefSearch = /href\s*=\s*"\.\.\/\.\.\//g;
+    const srcSearch = /src\s*=\s*"\.\.\/\.\.\//g;
+    const urlSearch = /url\((["']*)\.\.\/\.\.\//g;
+
+    return html
+      .replace(hrefSearch, 'href="../')
+      .replace(srcSearch, 'src="../')
+      .replace(urlSearch, 'url($1../')
+    ;
+  };
+
+  const buildAccurateSelectorFromElem = function (elem) {
+    let theSelector = elem.tagName.toLowerCase();
+
+    if (elem.id) theSelector += `#${elem.id}`;
+    if (elem.getAttribute('role')) theSelector += `[role="${elem.getAttribute('role')}"]`;
+    if (elem.classList.length > 0) theSelector += `.${[].join.call(elem.classList, '.')}`;
+
+    theSelector += ':first-of-type';
+
+    return theSelector;
+  };
+
+  /**
+   * This is an ugly mess: Blink does not properly render SVGs when using DOMParser alone.
+   * But, I need DOMParser to determine the correct element to extract.
+   *
+   * I only want to get the first element within the `<body>` tag of the loaded document.
+   * This dumps the whole, messy, HTML document into a temporary `<div>`,
+   * then uses the DOMParser version, of the same element, to create an accurate selector,
+   * then finds that single element in the temporary `<div>` using the selector and returns it.
+   */
   const htmlStringToElem = function (html) {
+    let theSelector = '';
+    const tmpDoc = document.createElement('div');
+    const finalTmpDoc = document.createElement('div');
     const doc = (new DOMParser()).parseFromString(html, 'text/html');
-    return doc.body;
+
+    tmpDoc.innerHTML = html;
+    theSelector = buildAccurateSelectorFromElem(doc.body.firstElementChild);
+    finalTmpDoc.appendChild(tmpDoc.querySelector(theSelector));
+
+    return finalTmpDoc;
   };
 
   const replaceElementValue = function (elem, sel, data) {
@@ -197,7 +237,7 @@ const patternBotIncludes = function (manifest) {
 
     if (!patternDetails.html) return;
 
-    patternOutElem = htmlStringToElem(patternDetails.html);
+    patternOutElem = htmlStringToElem(correctHrefPaths(patternDetails.html));
     patternData = getPatternInfo(patternElem);
 
     Object.keys(patternData).forEach((sel) => {
@@ -234,7 +274,7 @@ const patternBotIncludes = function (manifest) {
   };
 
   const hideLoadingScreen = function () {
-    const allDownloadedInterval = setInterval(() => {
+    let allDownloadedInterval = setInterval(() => {
       if (Object.values(downloadedAssets).includes(false)) return;
 
       clearInterval(allDownloadedInterval);
@@ -272,7 +312,7 @@ const patternBotIncludes = function (manifest) {
           if (resp.status >= 200 && resp.status <= 299) {
             return resp.text();
           } else {
-            console.group('Cannot location pattern');
+            console.group('Cannot locate pattern');
             console.log(resp.url);
             console.log(`Error ${resp.status}: ${resp.statusText}`);
             console.groupEnd();
@@ -348,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1521122467538
+ * @version 1521659665644
  */
-const patternManifest_1521122467538 = {
+const patternManifest_1521659665644 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -519,7 +559,9 @@ const patternManifest_1521122467538 = {
           "primary": 0,
           "opposite": 255
         }
-      }
+      },
+      "bodyRaw": "\nPolar Skates is Canada's home for all your roller skate needs! Whether you're an expert or just starting out, we've got everything you need all in one place.\n",
+      "bodyBasic": "Polar Skates is Canada's home for all your roller skate needs! Whether you're an expert or just starting out, we've got everything you need all in one place."
     },
     "icons": [
       "arrow-down",
@@ -568,7 +610,8 @@ const patternManifest_1521122467538 = {
       "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer",
       "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms",
       "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation"
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table"
     ],
     "pages": []
   },
@@ -581,6 +624,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "banner-header",
           "namePretty": "Banner header",
+          "filename": "banner-header",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/banner-header.html",
           "localPath": "patterns/banner/banner-header.html",
           "readme": {}
@@ -588,6 +632,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "banner-signup",
           "namePretty": "Banner signup",
+          "filename": "banner-signup",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/banner-signup.html",
           "localPath": "patterns/banner/banner-signup.html",
           "readme": {}
@@ -597,6 +642,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/README.md",
           "localPath": "patterns/banner/README.md"
         }
@@ -605,6 +651,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "banner",
           "namePretty": "Banner",
+          "filename": "banner",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/banner.css",
           "localPath": "patterns/banner/banner.css"
         }
@@ -618,6 +665,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
+          "filename": "buttons",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
@@ -626,6 +674,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
@@ -634,6 +683,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
+          "filename": "buttons",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
@@ -647,6 +697,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "category-icon-card",
           "namePretty": "Category icon card",
+          "filename": "category-icon-card",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/category-icon-card.html",
           "localPath": "patterns/cards/category-icon-card.html",
           "readme": {
@@ -656,6 +707,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "category-image-card",
           "namePretty": "Category image card",
+          "filename": "category-image-card",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/category-image-card.html",
           "localPath": "patterns/cards/category-image-card.html",
           "readme": {
@@ -665,6 +717,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "product-list-card",
           "namePretty": "Product list card",
+          "filename": "product-list-card",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/product-list-card.html",
           "localPath": "patterns/cards/product-list-card.html",
           "readme": {
@@ -676,6 +729,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
@@ -684,6 +738,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "cards",
           "namePretty": "Cards",
+          "filename": "cards",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
@@ -697,6 +752,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "footer",
           "namePretty": "Footer",
+          "filename": "footer",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html",
           "readme": {
@@ -708,6 +764,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/README.md",
           "localPath": "patterns/footer/README.md"
         }
@@ -716,6 +773,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "footer",
           "namePretty": "Footer",
+          "filename": "footer",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/footer.css",
           "localPath": "patterns/footer/footer.css"
         }
@@ -729,6 +787,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "basic-optional",
           "namePretty": "Basic optional",
+          "filename": "basic-optional",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic-optional.html",
           "localPath": "patterns/forms/basic-optional.html",
           "readme": {
@@ -738,6 +797,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "basic-placeholder",
           "namePretty": "Basic placeholder",
+          "filename": "basic-placeholder",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic-placeholder.html",
           "localPath": "patterns/forms/basic-placeholder.html",
           "readme": {
@@ -747,6 +807,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "basic",
           "namePretty": "Basic",
+          "filename": "basic",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic.html",
           "localPath": "patterns/forms/basic.html",
           "readme": {
@@ -756,6 +817,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "check-boxes",
           "namePretty": "Check boxes",
+          "filename": "check-boxes",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/check-boxes.html",
           "localPath": "patterns/forms/check-boxes.html",
           "readme": {
@@ -765,6 +827,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "drop-down",
           "namePretty": "Drop down",
+          "filename": "drop-down",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/drop-down.html",
           "localPath": "patterns/forms/drop-down.html",
           "readme": {
@@ -776,6 +839,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
@@ -784,6 +848,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "forms",
           "namePretty": "Forms",
+          "filename": "forms",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
@@ -797,6 +862,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "header",
           "namePretty": "Header",
+          "filename": "header",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/header.html",
           "localPath": "patterns/header/header.html",
           "readme": {
@@ -806,6 +872,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "shipping-bar",
           "namePretty": "Shipping bar",
+          "filename": "shipping-bar",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/shipping-bar.html",
           "localPath": "patterns/header/shipping-bar.html",
           "readme": {
@@ -817,6 +884,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/README.md",
           "localPath": "patterns/header/README.md"
         }
@@ -825,6 +893,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "header",
           "namePretty": "Header",
+          "filename": "header",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/header.css",
           "localPath": "patterns/header/header.css"
         }
@@ -838,6 +907,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "nav-checkout-small",
           "namePretty": "Nav checkout small",
+          "filename": "nav-checkout-small",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/nav-checkout-small.html",
           "localPath": "patterns/navigation/nav-checkout-small.html",
           "readme": {
@@ -849,6 +919,7 @@ const patternManifest_1521122467538 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/README.md",
           "localPath": "patterns/navigation/README.md"
         }
@@ -857,10 +928,19 @@ const patternManifest_1521122467538 = {
         {
           "name": "navigation",
           "namePretty": "Navigation",
+          "filename": "navigation",
           "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/navigation.css",
           "localPath": "patterns/navigation/navigation.css"
         }
       ]
+    },
+    {
+      "name": "table",
+      "namePretty": "Table",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table",
+      "html": [],
+      "md": [],
+      "css": []
     }
   ],
   "config": {
@@ -883,5 +963,5 @@ const patternManifest_1521122467538 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521122467538);
+patternBotIncludes(patternManifest_1521659665644);
 }());
