@@ -43,3 +43,11 @@ cite {
 mark {
   background-color: var(--color-primary-light);
 }
+
+.neutral-grey-box {
+   background-color: var(--color-neutral-grey);
+ }
+
+.primary-light-box {
+  background-color: var(--color-primary-light)
+}
