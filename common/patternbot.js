@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1521662100232
+ * @version 1521663219294
  */
-const patternManifest_1521662100232 = {
+const patternManifest_1521663219294 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -715,6 +715,13 @@ const patternManifest_1521662100232 = {
           }
         },
         {
+          "name": "checkout-card",
+          "namePretty": "Checkout card",
+          "filename": "checkout-card",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/checkout-card.html",
+          "localPath": "patterns/cards/checkout-card.html"
+        },
+        {
           "name": "product-list-card",
           "namePretty": "Product list card",
           "filename": "product-list-card",
@@ -979,5 +986,5 @@ const patternManifest_1521662100232 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521662100232);
+patternBotIncludes(patternManifest_1521663219294);
 }());
