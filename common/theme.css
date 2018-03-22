@@ -45,9 +45,9 @@ mark {
 }
 
 .neutral-grey-box {
-   background-color: var(--color-neutral-grey);
- }
+  background-color: var(--color-neutral-grey);
+}
 
 .primary-light-box {
-  background-color: var(--color-primary-light)
+  background-color: var(--color-primary-light);
 }
