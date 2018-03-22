@@ -8,6 +8,6 @@
   background-color: var(--color-neutral-grey);
 }
 
-input {
+.sign-up-input {
   height: 53px;
 }
