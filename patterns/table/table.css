@@ -1,11 +1,11 @@
 .checkout-border-top {
-  border-bottom: 3px solid var(--color-primary)
+  border-bottom: 3px solid var(--color-primary);
 }
 
 .bottom-border-none {
-    border-bottom: none;
-  }
+  border-bottom: none;
+}
 
 .checkout-border-bottom {
-    border-top: 3px solid var(--color-primary)
-  }
+  border-top: 3px solid var(--color-primary);
+}

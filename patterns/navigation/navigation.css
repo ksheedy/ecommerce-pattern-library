@@ -7,21 +7,19 @@
   display: none;
 }
 
-#customer-info:checked ~  .nav-list #customer-info-wrap,
-#customer-info:checked ~  .nav-list #customer-info-wrap label,
-#shipping-info:checked ~  .nav-list #shipping-info-wrap,
-#shipping-info:checked ~  .nav-list #shipping-info-wrap label,
-#payment-info:checked ~  .nav-list #payment-info-wrap,
-#payment-info:checked ~  .nav-list #payment-info-wrap label
- {
+#customer-info:checked ~ .nav-list #customer-info-wrap,
+#customer-info:checked ~ .nav-list #customer-info-wrap label,
+#shipping-info:checked ~ .nav-list #shipping-info-wrap,
+#shipping-info:checked ~ .nav-list #shipping-info-wrap label,
+#payment-info:checked ~ .nav-list #payment-info-wrap,
+#payment-info:checked ~ .nav-list #payment-info-wrap label {
   color: var(--color-primary);
   background-color: var(--color-neutral-grey);
 }
 
 #customer-info:checked ~ .nav-list #customer-info-wrap .form-card,
 #shipping-info:checked ~ .nav-list #shipping-info-wrap .form-card,
-#payment-info:checked ~ .nav-list #payment-info-wrap .form-card
- {
+#payment-info:checked ~ .nav-list #payment-info-wrap .form-card {
   display: block;
 }
 
@@ -31,10 +29,6 @@
 }
 
 @media only screen and (min-width: 38em) {
-
-  .nav-list {
-
-  }
 
   .nav-list li {
     padding-top: 4em;
@@ -65,11 +59,9 @@
 
   #customer-info:checked ~ .nav-list #customer-info-wrap,
   #shipping-info:checked ~ .nav-list #shipping-info-wrap,
-  #payment-info:checked ~ .nav-list #payment-info-wrap
-   {
+  #payment-info:checked ~ .nav-list #payment-info-wrap {
     position: static;
     height: auto;
   }
-
 
 }

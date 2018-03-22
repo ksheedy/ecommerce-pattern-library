@@ -12,6 +12,7 @@
 .heading {
   white-space: nowrap;
 }
+
 .nav {
   position: absolute;
   display: none;
@@ -32,7 +33,7 @@
   top: 0;
   width: 100%;
   fill: #000;
-  stroke: #000
+  stroke: #000;
 }
 
 .icon img:hover,
@@ -60,11 +61,11 @@
   display: none;
 }
 
-.nav-check:checked ~ .masthead-group .nav-label .nav-open {
+.nav-check:checked ~ .masthead-group .nav-open {
   display: none;
 }
 
-.nav-check:checked ~ .masthead-group .nav-label .nav-close {
+.nav-check:checked ~ .masthead-group .nav-close {
   display: block;
 }
 
@@ -75,7 +76,7 @@
 .shipping-bar {
   background-color: var(--color-primary);
   color: #fff;
- }
+}
 
 @media only screen and (min-width: 60em) {
 
@@ -100,4 +101,5 @@
   .nav-label {
     display: none;
   }
+
 }
