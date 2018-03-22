@@ -10,3 +10,4 @@ shipping-bar:
   desc: |
     Shipping bar is placed directly below header on every page of the website, except for the checkout page.
 ---
+The same header is used on every single page of the website.

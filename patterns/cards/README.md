@@ -15,3 +15,4 @@ product-list-card:
   desc: |
     Product List Card is used on product list page. Each individual product on the page is displayed using Product List Card.
 ---
+Cards are used in grids throughout the website.

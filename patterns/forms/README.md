@@ -24,3 +24,4 @@ check-boxes:
   desc: |
     Check boxes are to be used when a user needs to select from multiple items out a few possibilities.
 ---
+Forms are used in multiple places throughout the website, but mainly on the checkout page.
