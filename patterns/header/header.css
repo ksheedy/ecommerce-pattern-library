@@ -47,14 +47,16 @@
   stroke: var(--color-primary);
 }
 
-.nav li a {
+.nav .nav-item {
   color: #000;
   text-decoration: none;
+  display: inline-block;
 }
 
-.nav li:hover, .nav li a:hover {
+.nav .nav-item:hover {
   background-color: var(--color-primary);
   color: #fff;
+  border-radius: 4px;
 }
 
 .nav-close {
@@ -88,6 +90,8 @@
     display: block;
     position: static;
     flex-grow: 1;
+    z-index: 100000000;
+    position: relative;
   }
 
   .nav li {

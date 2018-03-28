@@ -36,3 +36,14 @@
   background-color: #fff;
   color: var(--color-primary);
 }
+
+.botton-nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.botton-nav-link:hover {
+  background-color: #fff;
+  border-radius: 4px;
+  color: var(--color-primary);
+}
