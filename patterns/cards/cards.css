@@ -1,5 +1,5 @@
 .category-icon-card {
-  background-color: var(--color-neutral-grey);
+  background-color: transparent;
   color: #000;
   font-family: var(--font-secondary);
 }

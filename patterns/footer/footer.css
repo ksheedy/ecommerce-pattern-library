@@ -4,7 +4,7 @@
 }
 
 .icon img,
-.icon svg {
+.icon .svg-footer {
   left: 0;
   height: 100%;
   position: absolute;
@@ -14,7 +14,7 @@
 }
 
 .icon img:hover,
-.icon svg:hover {
+.icon .svg-footer:hover {
   left: 0;
   height: 100%;
   position: absolute;

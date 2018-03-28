@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Home Page</title>
+  <meta name="handheldfriendly" content="true">
+  <meta name="mobileoptimized" content="240">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="../common/patternbot.js"></script>
+</head>
+<body>
+  <script type="application/json" data-pattern="header/header"></script>
+  <script type="application/json" data-pattern="header/shipping-bar"></script>
+  <script type="application/json" data-pattern="banner/banner-header"></script>
+  <main>
+    <div class="neutral-grey-box push-2">
+      <div class="grid wrapper gutter-2">
+        <div class="unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/category-icon-card">
+            "use[xlink:href]": "../images/icons.svg#wheel",
+            "span": "Wheels"
+          </script>
+        </div>
+        <div class="unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/category-icon-card">
+            "use[xlink:href]": "../images/icons.svg#skate",
+            "span": "Skates"
+          </script>
+        </div>
+        <div class="unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/category-icon-card">
+            "use[xlink:href]": "../images/icons.svg#helmet",
+            "span": "Helmets"
+          </script>
+        </div>
+        <div class="unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/category-icon-card">
+            "use[xlink:href]": "../images/icons.svg#skatetool",
+            "span": "Tools"
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-box">
+      <div class="grid wrapper gutter-2">
+        <div class="island unit xs-1 s-1 m-1 l-1">
+          <h3>Shop gear bags</h3>
+        </div>
+        <div class="island unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/product-list-card"></script>
+        </div>
+        <div class="island unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/product-list-card"></script>
+        </div>
+        <div class="island unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/product-list-card"></script>
+        </div>
+        <div class="island unit xs-1-2 s-1-2 m-1-4 l-1-4">
+          <script type="application/json" data-pattern="cards/product-list-card"></script>
+        </div>
+      </div>
+    </div>
+    <div class="push-2">
+      <script type="application/json" data-pattern="banner/banner-signup"></script>
+    </div>
+  </main>
+  <footer>
+    <script type="application/json" data-pattern="footer/footer"></script>
+  </footer>
+</body>
+</html>

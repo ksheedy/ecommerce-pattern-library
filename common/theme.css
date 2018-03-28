@@ -51,3 +51,7 @@ mark {
 .primary-light-box {
   background-color: var(--color-primary-light);
 }
+
+.white-box {
+  background-color: #fff;
+}
