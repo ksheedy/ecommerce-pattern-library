@@ -27,12 +27,12 @@
   color: #fff;
 }
 
-.nav li a {
+.footer li a {
   color: #fff;
   text-decoration: none;
 }
 
-.nav li a:hover {
+.footer li a:hover {
   background-color: #fff;
   color: var(--color-primary);
 }

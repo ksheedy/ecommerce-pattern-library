@@ -36,24 +36,26 @@
   stroke: #000;
 }
 
-.icon img:hover,
-.icon .svg-icon:hover {
+.nav-item:hover img,
+.nav-item:hover .svg-icon {
   left: 0;
   height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
-  fill: var(--color-primary);
-  stroke: var(--color-primary);
+  fill: #fff;
+  stroke: #fff;
+  background-color: var(--color-primary);
 }
 
-.nav .nav-item {
+
+.nav-item {
   color: #000;
   text-decoration: none;
   display: inline-block;
 }
 
-.nav .nav-item:hover {
+.nav-item:hover {
   background-color: var(--color-primary);
   color: #fff;
   border-radius: 4px;
@@ -98,9 +100,7 @@
     display: inline-block;
   }
 
-  .nav li a {
-    padding: 0;
-  }
+
 
   .nav-label {
     display: none;
