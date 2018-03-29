@@ -1,12 +1,8 @@
 .banner {
-  background: url("../../images/home-banner.jpg") center top / cover no-repeat;
-  height: 70vh;
   border-bottom: solid 3px var(--color-primary);
-  z-index: -1;
-}
-
-.banner div {
-  z-index: 1;
+  max-height: 35em;
+  overflow: hidden;
+  color: #fff;
 }
 
 .sign-up-banner {
