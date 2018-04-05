@@ -74,6 +74,9 @@
 
 .nav-check:checked ~ .masthead-group .nav {
   display: block;
+  position: absolute;
+  top: 5em;
+  z-index: 1000000;
 }
 
 .shipping-bar {
