@@ -22,10 +22,17 @@
   color: var(--color-primary);
 }
 
-.product-list-card h4, .product-list-card p {
-  color: #000;
+.card-img: {
+  background-color: var(--color-primary);
 }
 
-.product-list-card:hover h4, .product-list-card:hover p {
+.card-img:hover, .card-container:hover .product-list-card h4, .card-container:hover .product-list-card h5, .card-container:hover .product-list-card p {
   color: var(--color-primary);
+}
+
+.card-container:hover .card-img {
+  opacity: .7;
+}
+.product-list-card h4, .product-list-card p {
+  color: #000;
 }
