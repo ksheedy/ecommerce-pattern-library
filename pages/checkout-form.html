@@ -15,240 +15,242 @@
     <script type="application/json" data-pattern="header/shipping-bar"></script>
   </header>
   <main>
-    <div class="pad-t gutter">
-      <div class="primary-light-box">
-        <div class="grid grid-middle gutter push">
-          <div class="unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
-            <div class="embed embed-1by1">
-              <img class="island embed-item" src="../images/skate-breeze.jpg" alt="">
+    <div class="grid">
+      <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3 pad-t gutter-1-2">
+        <div class="primary-light-box gutter">
+          <div class="grid grid-middle push">
+            <div class="pad-t unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
+              <div class="embed embed-1by1">
+                <img class="island-1-4 embed-item" src="../images/skate-breeze.jpg" alt="">
+              </div>
+            </div>
+            <div class="unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
+              <h5 class="pad-t-1-4 push-none">Breeze</h5>
+              <p class="push-none">Antik</p>
+              <p class="push-none">$515.00</p>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1 unit-l-1">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Discount Code"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1 unit-l-1 gutter-1-4">
+              <a class="btn" href="#">Apply</a>
             </div>
           </div>
-          <div class="unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
-            <h4 class="pad-t-1-4 push-1-2">Breeze</h4>
-            <p class="push-1-2">Antik</p>
-            <p class="push-1-2">$515.00</p>
+          <div class="pad-b">
+            <script type="application/json" data-pattern="table/checkout-table"></script>
           </div>
-          <div class="unit unit-xs-3-4 unit-s-3-4 unit-m-3-4 unit-l-3-4">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Discount Code"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1-4 unit-s-1-4 unit-m-1-4 unit-l-1-4">
-            <a class="btn" href="#">Apply</a>
-          </div>
-        </div>
-        <div class="gutter pad-b">
-          <script type="application/json" data-pattern="table/checkout-table"></script>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <script type="application/json" data-pattern="navigation/nav-checkout-small"></script>
-      <div class="gutter push" id="customer-info-page">
-        <div class="neutral-grey-box island-1-2 grid">
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "First Name"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Last Name"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Address"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Apt, suite, etc."
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
-            <script type="application/json" data-pattern="forms/drop-down">
-              {
-                "label": "Province",
-                ".option1": "Alberta",
-                ".option2": "British Columbia",
-                ".option3": "Manitoba",
-                ".option4": "New Brunswick",
-                ".option5": "Newfoundland & Labrador",
-                ".option6": "Nova Scotia",
-                ".option7": "Ontario",
-                ".option8": "PEI",
-                ".option9": "Quebec",
-                ".option10": "Saskatchewan"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Country"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Postal Code"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Email"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-            {
-              "label": "Phone Number"
-            }
-            </script>
-          </div>
-        </div>
-        <div class="neutral-grey-box island-1-2">
-          <a class="btn" href="#">Next</a>
         </div>
       </div>
 
-      <div class="gutter push" id="shipping-info-page">
-        <div class="neutral-grey-box island-1-2 grid">
-          <div class="gutter-1-4 unit unit-xs-1 unit-s-1 unit-m-1 unit-l">
-            <script type="application/json" data-pattern="forms/check-boxes">
-            {
-              "label": "Shipping info same as Customer Info"
-            }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
+      <div class="unit unit-xs-1 unit-s-1 unit-m-2-3 unit-l-2-3">
+        <script type="application/json" data-pattern="navigation/nav-checkout-small"></script>
+        <div class="gutter push" id="customer-info-page">
+          <div class="neutral-grey-box island-1-2 grid">
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "First Name"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Last Name"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Address"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Apt, suite, etc."
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
+              <script type="application/json" data-pattern="forms/drop-down">
+                {
+                  "label": "Province",
+                  ".option1": "Alberta",
+                  ".option2": "British Columbia",
+                  ".option3": "Manitoba",
+                  ".option4": "New Brunswick",
+                  ".option5": "Newfoundland & Labrador",
+                  ".option6": "Nova Scotia",
+                  ".option7": "Ontario",
+                  ".option8": "PEI",
+                  ".option9": "Quebec",
+                  ".option10": "Saskatchewan"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Country"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Postal Code"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Email"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
               {
-                "label": "First Name"
+                "label": "Phone Number"
               }
-            </script>
+              </script>
+            </div>
           </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Last Name"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Address"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Apt, suite, etc."
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
-            <script type="application/json" data-pattern="forms/drop-down">
-              {
-                "label": "Province",
-                ".option1": "Alberta",
-                ".option2": "British Columbia",
-                ".option3": "Manitoba",
-                ".option4": "New Brunswick",
-                ".option5": "Newfoundland & Labrador",
-                ".option6": "Nova Scotia",
-                ".option7": "Ontario",
-                ".option8": "PEI",
-                ".option9": "Quebec",
-                ".option10": "Saskatchewan"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Country"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Postal Code"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Email"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-            {
-              "label": "Phone Number"
-            }
-            </script>
+          <div class="neutral-grey-box island-1-2">
+            <a class="btn" href="#">Next</a>
           </div>
         </div>
-        <div class="neutral-grey-box island-1-2">
-          <a class="btn" href="#">Next</a>
-        </div>
-      </div>
 
-      <div class="gutter push" id="payment-info-page">
-        <div class="neutral-grey-box island-1-2 grid">
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1">
-            <script type="application/json" data-pattern="forms/basic">
+        <div class="gutter push" id="shipping-info-page">
+          <div class="neutral-grey-box island-1-2 grid">
+            <div class="gutter-1-4 unit unit-xs-1 unit-s-1 unit-m-1 unit-l">
+              <script type="application/json" data-pattern="forms/check-boxes">
               {
-                "label": "Card Number"
+                "label": "Shipping info same as Customer Info"
               }
-            </script>
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "First Name"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Last Name"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Address"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Apt, suite, etc."
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
+              <script type="application/json" data-pattern="forms/drop-down">
+                {
+                  "label": "Province",
+                  ".option1": "Alberta",
+                  ".option2": "British Columbia",
+                  ".option3": "Manitoba",
+                  ".option4": "New Brunswick",
+                  ".option5": "Newfoundland & Labrador",
+                  ".option6": "Nova Scotia",
+                  ".option7": "Ontario",
+                  ".option8": "PEI",
+                  ".option9": "Quebec",
+                  ".option10": "Saskatchewan"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Country"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-3 unit-l-1-3">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Postal Code"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Email"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+              {
+                "label": "Phone Number"
+              }
+              </script>
+            </div>
           </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Name on Card"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "Exp. Date"
-              }
-            </script>
-          </div>
-          <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
-            <script type="application/json" data-pattern="forms/basic">
-              {
-                "label": "CVV"
-              }
-            </script>
+          <div class="neutral-grey-box island-1-2">
+            <a class="btn" href="#">Next</a>
           </div>
         </div>
-        <div class="neutral-grey-box island-1-2">
-          <a class="btn" href="#">Place Order</a>
+
+        <div class="gutter push" id="payment-info-page">
+          <div class="neutral-grey-box island-1-2 grid">
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Card Number"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Name on Card"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "Exp. Date"
+                }
+              </script>
+            </div>
+            <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2">
+              <script type="application/json" data-pattern="forms/basic">
+                {
+                  "label": "CVV"
+                }
+              </script>
+            </div>
+          </div>
+          <div class="neutral-grey-box island-1-2">
+            <a class="btn" href="#">Place Order</a>
+          </div>
         </div>
       </div>
     </div>
