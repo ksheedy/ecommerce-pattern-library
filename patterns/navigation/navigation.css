@@ -23,6 +23,13 @@
   display: block;
 }
 
+#customer-info:checked ~ #customer-info-page,
+#shipping-info:checked ~ #shipping-info-page,
+#payment-info:checked ~ #payment-info-page {
+  display: block;
+}
+
+
 .nav-list {
   padding-left: 0;
   position: relative;
