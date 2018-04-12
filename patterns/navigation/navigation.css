@@ -71,4 +71,11 @@
     height: auto;
   }
 
+  .icon {
+    display: none;
+  }
+
+  .label-label {
+    text-align: center;
+  }
 }
