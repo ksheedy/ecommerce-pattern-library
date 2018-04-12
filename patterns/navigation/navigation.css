@@ -8,11 +8,11 @@
 }
 
 #customer-info:checked ~ .nav-list #customer-info-wrap,
-#customer-info:checked ~ .nav-list #customer-info-wrap label,
+#customer-info:checked ~ .nav-list #customer-info-wrap .label-label,
 #shipping-info:checked ~ .nav-list #shipping-info-wrap,
-#shipping-info:checked ~ .nav-list #shipping-info-wrap label,
+#shipping-info:checked ~ .nav-list #shipping-info-wrap .label-label,
 #payment-info:checked ~ .nav-list #payment-info-wrap,
-#payment-info:checked ~ .nav-list #payment-info-wrap label {
+#payment-info:checked ~ .nav-list #payment-info-wrap .label-label {
   color: var(--color-primary);
   background-color: var(--color-neutral-grey);
 }
@@ -47,7 +47,7 @@
     width: 100%;
   }
 
-  .nav-list label {
+  .nav-list .label-label {
     width: 33.3333%;
     position: absolute;
     top: 0;
@@ -56,11 +56,11 @@
     background-color: #fff;
   }
 
-  .nav-list li:nth-child(2) label {
+  .nav-list li:nth-child(2) .label-label {
     left: 33.3333%;
   }
 
-  .nav-list li:nth-child(3) label {
+  .nav-list li:nth-child(3) .label-label {
     left: 66.6666%;
   }
 
