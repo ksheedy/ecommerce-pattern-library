@@ -13,17 +13,80 @@
     <script type="application/json" data-pattern="header/header"></script>
     <script type="application/json" data-pattern="header/shipping-bar"></script>
   </header>
-  <main>
+  <main class="wrapper">
     <div class="grid island-2">
       <div class="unit xs-1 m-1-2">
         <img class="img-flex" src="../images/skate-breeze.jpg" alt="Breeze Rollerskate">
       </div>
-      <div class="unit xs-1 m-1-2 neutral-grey-box island">
-        <h2 class="push-1-2">Breeze</h2>
-        <h4>Antik</h3>
-        <data value="515">$515.00</data>
+      <div class="unit xs-1 m-1-2 neutral-grey-box island push">
+        <h2 class="push-0 gutter-1-4">Breeze</h2>
+        <h4 class="push-0 gutter-1-4">Antik</h3>
+        <data class="gutter-1-4" value="515">$515.00</data>
+        <p class="pad-t gutter-1-4">These newly redesigned leather boots from Antik are awesome. Made with the fully redesigned MG2 boot, these Antik skates are comfortable, provide great ankle support and come with some enviable upgrades.</p>
+        <p class="gutter-1-4">This is not a standard stock item. Please allow 4-6 weeks for delivery</p>
+        <form method="post" action="#" class="grid">
+          <div class="unit xs-1 s-1-2">
+            <script type="application/json" data-pattern="forms/drop-down">
+              {
+                "label":"Size",
+                ".option1": "Size 6",
+                ".option2": "Size 7",
+                ".option3": "Size 8",
+                ".option4": "Size 9",
+                ".option5": "Size 10",
+                ".option6": "Size 11",
+                ".option7[class]": "option7 hidden",
+                ".option8[class]": "option8 hidden",
+                ".option9[class]": "option9 hidden",
+                ".option10[class]": "option10 hidden"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 s-1-2">
+            <script type="application/json" data-pattern="forms/drop-down">
+              {
+                "label":"Quantity",
+                ".option1": "1",
+                ".option2": "2",
+                ".option3": "3",
+                ".option4": "4",
+                ".option5": "5",
+                ".option6": "6",
+                ".option7": "7",
+                ".option8": "8",
+                ".option9": "9",
+                ".option10": "10"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 gutter-1-4 text-center pad-t-1-4">
+            <button type="submit" class="btn" href="#">Add to Cart</button>
+          </div>
+        </form>
+      </div>
+      <section class="grid island">
+        <h2 class="unit xs-1 mega">Related Items</h2>
+        <div class="unit xs-1-2 l-1-4 island-1-2">
+          <a href="#"><img class="img-flex" src="../images/skate-wicked.jpg" alt="Wicked Rollerskate"></a>
+        </div>
+        <div class="unit xs-1-2 l-1-4 island-1-2">
+          <a href="#"><img class="img-flex" src="../images/skate-ebon.jpg" alt="Ebon Rollerskate"></a>
+        </div>
+        <div class="unit xs-1-2 l-1-4 island-1-2">
+          <a href="#"><img class="img-flex" src="../images/skate-solaris.jpg" alt="Wicked Solaris"></a>
+        </div>
+        <div class="unit xs-1-2 l-1-4 island-1-2">
+          <a href="#"><img class="img-flex" src="../images/skate-bluestreak.jpg" alt="Bluestreak Rollerskate"></a>
+        </div>
+      </section>
       </div>
     </div>
   </main>
+  <footer>
+    <div class="push-2">
+      <script type="application/json" data-pattern="banner/banner-signup"></script>
+    </div>
+      <script type="application/json" data-pattern="footer/footer"></script>
+  </footer>
 </body>
 </html>
