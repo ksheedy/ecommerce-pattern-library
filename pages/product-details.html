@@ -9,11 +9,16 @@
   <script src="../common/patternbot.js"></script>
 </head>
 <body>
-  <header>
+  <ul class="skip-links">
+    <li><a href="#main">Jump to main content</a></li>
+    <li><a href="#nav">Jump to navigation</a></li>
+    <li><a href="#contentinfo">Jump to navigation</a></li>
+  </ul>
+  <header role="banner">
     <script type="application/json" data-pattern="header/header"></script>
     <script type="application/json" data-pattern="header/shipping-bar"></script>
   </header>
-  <main class="wrapper">
+  <main class="wrapper" id="main" role="main" tabindex="0">
     <div class="grid island-2">
       <div class="unit xs-1 m-1-2">
         <img class="img-flex" src="../images/skate-breeze.jpg" alt="Breeze Rollerskate">
@@ -81,7 +86,7 @@
       </section>
     </div>
   </main>
-  <footer>
+  <footer role="contentinfo">
     <div class="push-2">
       <script type="application/json" data-pattern="banner/banner-signup"></script>
     </div>

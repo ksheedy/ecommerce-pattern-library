@@ -9,10 +9,17 @@
   <script src="../common/patternbot.js"></script>
 </head>
 <body>
-  <script type="application/json" data-pattern="header/header"></script>
-  <script type="application/json" data-pattern="header/shipping-bar"></script>
-  <script type="application/json" data-pattern="banner/banner-header"></script>
-  <main>
+  <ul class="skip-links">
+    <li><a href="#main">Jump to main content</a></li>
+    <li><a href="#nav">Jump to navigation</a></li>
+    <li><a href="#contentinfo">Jump to navigation</a></li>
+  </ul>
+  <header role="banner">
+    <script type="application/json" data-pattern="header/header"></script>
+    <script type="application/json" data-pattern="header/shipping-bar"></script>
+    <script type="application/json" data-pattern="banner/banner-header"></script>
+  </header>
+  <main id="main" role="main" tabindex="0">
     <div class="pad-t-2 neutral-grey-box pad-b-2">
       <div class="grid wrapper gutter-2">
         <div class="unit xs-1-2 s-1-2 m-1-4 l-1-4">
@@ -101,7 +108,7 @@
       <script type="application/json" data-pattern="banner/banner-signup"></script>
     </div>
   </main>
-  <footer>
+  <footer role="contentinfo">
     <script type="application/json" data-pattern="footer/footer"></script>
   </footer>
 </body>
