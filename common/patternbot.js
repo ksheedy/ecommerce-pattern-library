@@ -86,17 +86,11 @@ const patternBotIncludes = function (manifest) {
     `},
   };
 
-  let jsFileQueue = {
-    sync: [],
-    async: [],
-  };
   let downloadedAssets = {};
 
   const downloadHandler = function (e) {
-    const id = (e.target.hasAttribute('src')) ? e.target.getAttribute('src') : e.target.getAttribute('href');
-
     e.target.removeEventListener('load', downloadHandler);
-    downloadedAssets[id] = true;
+    downloadedAssets[e.target.getAttribute('href')] = true;
   };
 
   const findRootPath = function () {
@@ -121,7 +115,7 @@ const patternBotIncludes = function (manifest) {
     newLink.addEventListener('load', downloadHandler);
 
     document.head.appendChild(newLink);
-  };
+  }
 
   const bindAllCssFiles = function (rootPath) {
     if (manifest.commonInfo && manifest.commonInfo.readme && manifest.commonInfo.readme.attributes &&  manifest.commonInfo.readme.attributes.fontUrl) {
@@ -142,54 +136,6 @@ const patternBotIncludes = function (manifest) {
         addCssFile(`../${css.localPath}`);
       });
     });
-  };
-
-  const queueAllJsFiles = function (rootPath) {
-    if (manifest.patternLibFiles && manifest.patternLibFiles.js) {
-      manifest.patternLibFiles.js.forEach((js) => {
-        const href = `..${manifest.config.commonFolder}/${js.filename}`;
-
-        downloadedAssets[href] = false;
-        jsFileQueue.sync.push(href);
-      });
-    }
-
-    manifest.userPatterns.forEach((pattern) => {
-      if (!pattern.js) return;
-
-      pattern.js.forEach((js) => {
-        const href = `../${js.localPath}`;
-
-        downloadedAssets[href] = false;
-        jsFileQueue.async.push(href);
-      });
-    });
-  };
-
-  const addJsFile = function (href) {
-    const newScript = document.createElement('script');
-
-    newScript.setAttribute('src', href);
-    document.body.appendChild(newScript);
-
-    return newScript;
-  };
-
-  const bindNextJsFile = function (e) {
-    if (e && e.target) {
-      e.target.removeEventListener('load', bindNextJsFile);
-      downloadedAssets[e.target.getAttribute('src')] = true;
-    }
-
-    if (jsFileQueue.sync.length > 0) {
-      const scriptTag = addJsFile(jsFileQueue.sync.shift());
-      scriptTag.addEventListener('load', bindNextJsFile);
-    } else {
-      jsFileQueue.async.forEach((js) => {
-        const scriptTag = addJsFile(js);
-        scriptTag.addEventListener('load', downloadHandler);
-      });
-    }
   };
 
   const getPatternInfo = function (patternElem) {
@@ -422,13 +368,11 @@ const patternBotIncludes = function (manifest) {
 
     rootPath = findRootPath();
     bindAllCssFiles(rootPath);
-    queueAllJsFiles(rootPath);
     allPatternTags = findAllPatternTags();
     allPatterns = constructAllPatterns(rootPath, allPatternTags);
 
     loadAllPatterns(allPatterns).then((allLoadedPatterns) => {
       renderAllPatterns(allPatternTags, allLoadedPatterns);
-      bindNextJsFile();
       hideLoadingScreen();
     }).catch((e) => {
       console.group('Pattern load error');
@@ -443,17 +387,10 @@ const patternBotIncludes = function (manifest) {
 
 /** 
  * Patternbot library manifest
-<<<<<<< HEAD
  * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library
- * @version 1523800457191
+ * @version 1524149941826
  */
-const patternManifest_1523800457191 = {
-=======
- * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy
- * @version 84c7f81c6c05990d40bfa61f4bc72fc09666a11b
- */
-const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
->>>>>>> 90a13acb1cced080e4d287eb2781d1418258d801
+const patternManifest_1524149941825 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -648,69 +585,68 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
   },
   "patternLibFiles": {
     "commonParsable": {
-      "gridifier": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/common/grid.css",
-      "typografier": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/common/type.css",
-      "modulifier": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/common/modules.css",
-      "theme": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/common/theme.css"
+      "gridifier": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/common/grid.css",
+      "typografier": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/common/type.css",
+      "modulifier": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/common/modules.css",
+      "theme": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/common/theme.css"
     },
     "imagesParsable": {
-      "icons": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/images/icons.svg"
+      "icons": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/images/icons.svg"
     },
     "logos": {
-      "sizeLarge": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/images/logo-256.svg",
-      "size64": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/images/logo-64.svg",
-      "size32": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/images/logo-32.svg",
-      "size16": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/images/logo-16.svg",
+      "sizeLarge": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/images/logo-256.svg",
+      "size64": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/images/logo-64.svg",
+      "size32": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/images/logo-32.svg",
+      "size16": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/images/logo-16.svg",
       "size16Local": "logo-16.svg",
       "sizeLargeLocal": "logo-256.svg",
       "size32Local": "logo-32.svg",
       "size64Local": "logo-64.svg"
     },
     "patterns": [
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/banner",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/buttons",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/footer",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/header",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/navigation",
-      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/table"
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation",
+      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table"
     ],
     "pages": [
       {
         "name": "checkout-form.html",
         "namePretty": "Checkout form",
-        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/pages/checkout-form.html"
+        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/pages/checkout-form.html"
       },
       {
         "name": "home.html",
         "namePretty": "Home",
-        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/pages/home.html"
+        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/pages/home.html"
       },
       {
         "name": "product-details.html",
         "namePretty": "Product details",
-        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/pages/product-details.html"
+        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/pages/product-details.html"
       },
       {
         "name": "product-list-page.html",
         "namePretty": "Product list page",
-        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/pages/product-list-page.html"
+        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/pages/product-list-page.html"
       }
-    ],
-    "js": []
+    ]
   },
   "userPatterns": [
     {
       "name": "banner",
       "namePretty": "Banner",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/banner",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner",
       "html": [
         {
           "name": "banner-header",
           "namePretty": "Banner header",
           "filename": "banner-header",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/banner/banner-header.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/banner-header.html",
           "localPath": "patterns/banner/banner-header.html",
           "readme": {}
         },
@@ -718,7 +654,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "banner-signup",
           "namePretty": "Banner signup",
           "filename": "banner-signup",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/banner/banner-signup.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/banner-signup.html",
           "localPath": "patterns/banner/banner-signup.html",
           "readme": {}
         }
@@ -728,7 +664,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/banner/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/README.md",
           "localPath": "patterns/banner/README.md"
         }
       ],
@@ -737,22 +673,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "banner",
           "namePretty": "Banner",
           "filename": "banner",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/banner/banner.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/banner/banner.css",
           "localPath": "patterns/banner/banner.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "buttons",
       "namePretty": "Buttons",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/buttons",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons",
       "html": [
         {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/buttons/buttons.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
       ],
@@ -761,7 +696,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/buttons/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
       ],
@@ -770,22 +705,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/buttons/buttons.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "cards",
       "namePretty": "Cards",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards",
       "html": [
         {
           "name": "category-icon-card",
           "namePretty": "Category icon card",
           "filename": "category-icon-card",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards/category-icon-card.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/category-icon-card.html",
           "localPath": "patterns/cards/category-icon-card.html",
           "readme": {
             "width": 200
@@ -795,7 +729,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "category-image-card",
           "namePretty": "Category image card",
           "filename": "category-image-card",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards/category-image-card.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/category-image-card.html",
           "localPath": "patterns/cards/category-image-card.html",
           "readme": {
             "width": 400
@@ -805,14 +739,14 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "checkout-card",
           "namePretty": "Checkout card",
           "filename": "checkout-card",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards/checkout-card.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/checkout-card.html",
           "localPath": "patterns/cards/checkout-card.html"
         },
         {
           "name": "product-list-card",
           "namePretty": "Product list card",
           "filename": "product-list-card",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards/product-list-card.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/product-list-card.html",
           "localPath": "patterns/cards/product-list-card.html",
           "readme": {
             "width": 600
@@ -824,7 +758,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
       ],
@@ -833,22 +767,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "cards",
           "namePretty": "Cards",
           "filename": "cards",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/cards/cards.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "footer",
       "namePretty": "Footer",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/footer",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer",
       "html": [
         {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/footer/footer.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html",
           "readme": {
             "width": 400
@@ -860,7 +793,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/footer/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/README.md",
           "localPath": "patterns/footer/README.md"
         }
       ],
@@ -869,22 +802,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/footer/footer.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/footer/footer.css",
           "localPath": "patterns/footer/footer.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "forms",
       "namePretty": "Forms",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms",
       "html": [
         {
           "name": "basic-optional",
           "namePretty": "Basic optional",
           "filename": "basic-optional",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/basic-optional.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic-optional.html",
           "localPath": "patterns/forms/basic-optional.html",
           "readme": {
             "width": 300
@@ -894,7 +826,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "basic-placeholder",
           "namePretty": "Basic placeholder",
           "filename": "basic-placeholder",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/basic-placeholder.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic-placeholder.html",
           "localPath": "patterns/forms/basic-placeholder.html",
           "readme": {
             "width": 300
@@ -904,7 +836,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "basic",
           "namePretty": "Basic",
           "filename": "basic",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/basic.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/basic.html",
           "localPath": "patterns/forms/basic.html",
           "readme": {
             "width": 300
@@ -914,7 +846,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "check-boxes",
           "namePretty": "Check boxes",
           "filename": "check-boxes",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/check-boxes.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/check-boxes.html",
           "localPath": "patterns/forms/check-boxes.html",
           "readme": {
             "width": 300
@@ -924,7 +856,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "drop-down",
           "namePretty": "Drop down",
           "filename": "drop-down",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/drop-down.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/drop-down.html",
           "localPath": "patterns/forms/drop-down.html",
           "readme": {
             "width": 300
@@ -936,7 +868,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
       ],
@@ -945,22 +877,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "forms",
           "namePretty": "Forms",
           "filename": "forms",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/forms/forms.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "header",
       "namePretty": "Header",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/header",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header",
       "html": [
         {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/header/header.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/header.html",
           "localPath": "patterns/header/header.html",
           "readme": {
             "width": 400
@@ -970,7 +901,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "shipping-bar",
           "namePretty": "Shipping bar",
           "filename": "shipping-bar",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/header/shipping-bar.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/shipping-bar.html",
           "localPath": "patterns/header/shipping-bar.html",
           "readme": {
             "width": 400
@@ -982,7 +913,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/header/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/README.md",
           "localPath": "patterns/header/README.md"
         }
       ],
@@ -991,22 +922,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/header/header.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/header/header.css",
           "localPath": "patterns/header/header.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "navigation",
       "namePretty": "Navigation",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/navigation",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation",
       "html": [
         {
           "name": "nav-checkout-small",
           "namePretty": "Nav checkout small",
           "filename": "nav-checkout-small",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/navigation/nav-checkout-small.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/nav-checkout-small.html",
           "localPath": "patterns/navigation/nav-checkout-small.html",
           "readme": {
             "width": 320
@@ -1018,7 +948,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/navigation/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/README.md",
           "localPath": "patterns/navigation/README.md"
         }
       ],
@@ -1027,22 +957,21 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "navigation",
           "namePretty": "Navigation",
           "filename": "navigation",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/navigation/navigation.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/navigation/navigation.css",
           "localPath": "patterns/navigation/navigation.css"
         }
-      ],
-      "js": []
+      ]
     },
     {
       "name": "table",
       "namePretty": "Table",
-      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/table",
+      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table",
       "html": [
         {
           "name": "checkout-table",
           "namePretty": "Checkout table",
           "filename": "checkout-table",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/table/checkout-table.html",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table/checkout-table.html",
           "localPath": "patterns/table/checkout-table.html",
           "readme": {}
         }
@@ -1052,7 +981,7 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/table/README.md",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table/README.md",
           "localPath": "patterns/table/README.md"
         }
       ],
@@ -1061,11 +990,10 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
           "name": "table",
           "namePretty": "Table",
           "filename": "table",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library-ksheedy/patterns/table/table.css",
+          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/ecommerce-pattern-library/patterns/table/table.css",
           "localPath": "patterns/table/table.css"
         }
-      ],
-      "js": []
+      ]
     }
   ],
   "config": {
@@ -1088,9 +1016,5 @@ const patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b = {
   }
 };
 
-<<<<<<< HEAD
-patternBotIncludes(patternManifest_1523800457191);
-=======
-patternBotIncludes(patternManifest_84c7f81c6c05990d40bfa61f4bc72fc09666a11b);
->>>>>>> 90a13acb1cced080e4d287eb2781d1418258d801
+patternBotIncludes(patternManifest_1524149941825);
 }());
