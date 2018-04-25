@@ -29,7 +29,6 @@
   display: block;
 }
 
-
 .nav-list {
   padding-left: 0;
   position: relative;
@@ -78,4 +77,5 @@
   .label-label {
     text-align: center;
   }
+
 }
