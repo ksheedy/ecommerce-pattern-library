@@ -17,14 +17,15 @@
   <header role="banner">
     <script type="application/json" data-pattern="header/header"></script>
     <script type="application/json" data-pattern="header/shipping-bar"></script>
+    <script type="application/json" data-pattern="banner/banner-header">
+      {
+        "img[src]": "../images/product-list-banner.jpg",
+        "img[alt]": "Image of a group of roller skaters",
+        "h1": "Skate hard. Play hard."
+      }
+    </script>
   </header>
-  <script type="application/json" data-pattern="banner/banner-header">
-    {
-      "img[src]": "../images/product-list-banner.jpg",
-      "img[alt]": "Image of a group of roller skaters",
-      "h1": "Skate hard. Play hard."
-    }
-  </script>
+
   <main id="main" role="main" tabindex="0">
     <div class="pad-t-2 neutral-grey-box pad-b-2">
       <div class="grid wrapper gutter-2">
@@ -65,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div class="white-box pad-t-2 pad-b-2">
+    <div class="wrapper white-box pad-t-2 pad-b-2">
       <div class="grid gutter-2">
         <div class="island unit xs-1-2 s-1-2 m-1-4 l-1-4">
           <script type="application/json" data-pattern="cards/product-list-card">

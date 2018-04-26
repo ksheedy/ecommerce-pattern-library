@@ -22,10 +22,6 @@
   color: var(--color-primary);
 }
 
-.card-img {
-  background-color: var(--color-primary);
-}
-
 .card-img:hover, .card-container:hover .product-list-card h4, .card-container:hover .product-list-card h5, .card-container:hover .product-list-card p {
   color: var(--color-primary);
 }
